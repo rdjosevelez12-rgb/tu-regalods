@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f1e7">
+<title>🌻</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;width:100%}
+body{
+  min-height:100svh;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 45%,#fffdf8 0%,#f8f1e5 58%,#eee5d7 100%);
+}
+main{width:min(100vw,560px);height:100svh;min-height:560px;display:grid;place-items:center;position:relative;padding:24px}
+#open{
+  appearance:none;border:1px solid #d9c8a8;background:#fffdf8;color:#80633a;
+  border-radius:999px;padding:16px 42px;letter-spacing:.24em;font:600 12px Arial,sans-serif;
+  box-shadow:0 8px 25px #6d54201a;cursor:pointer;transition:opacity .5s,transform .5s;
+}
+#open:focus-visible{outline:2px solid #b58c45;outline-offset:5px}
+#open.hide{opacity:0;transform:scale(.94);pointer-events:none}
+#flower{position:absolute;top:12%;left:50%;transform:translateX(-50%);width:min(76vw,340px);aspect-ratio:1;opacity:0;pointer-events:none;transition:opacity .4s ease}
+#flower.show{opacity:1}
+#message{position:absolute;top:67%;left:5%;width:90%;text-align:center;color:#80633a;font:500 clamp(15px,4vw,18px)/1.55 Georgia,serif;letter-spacing:.01em;opacity:0;transform:translateY(8px);transition:opacity .8s ease 2.5s,transform .8s ease 2.5s}
+#message.show{opacity:1;transform:translateY(0)}
+#dedication{position:absolute;right:18px;top:18px;max-width:210px;text-align:right;color:#8a704c;font:italic 13px/1.65 Georgia,serif;opacity:0;transform:translateY(-5px);transition:opacity .8s ease 2.8s,transform .8s ease 2.8s}
+#dedication.show{opacity:1;transform:translateY(0)}
+#music{position:absolute;width:1px;height:1px;left:-10px;bottom:0;border:0;opacity:0;pointer-events:none}
+svg{width:100%;height:100%;overflow:visible}
+.stem{stroke-dasharray:250;stroke-dashoffset:250}
+#flower.show .stem{stroke-dashoffset:0;transition:stroke-dashoffset 1.35s ease}
+.leaf{opacity:0}
+#flower.show .leaf{opacity:1;transition:opacity .7s ease 1s}
+.petal{opacity:0}
+#flower.show .petal{opacity:1;transition:opacity .42s ease}
+#flower.show .p1{transition-delay:1.05s}
+#flower.show .p2{transition-delay:1.13s}
+#flower.show .p3{transition-delay:1.21s}
+#flower.show .p4{transition-delay:1.29s}
+#flower.show .p5{transition-delay:1.37s}
+#flower.show .p6{transition-delay:1.45s}
+#flower.show .p7{transition-delay:1.53s}
+#flower.show .p8{transition-delay:1.61s}
+#flower.show .p9{transition-delay:1.69s}
+#flower.show .p10{transition-delay:1.77s}
+#flower.show .p11{transition-delay:1.85s}
+#flower.show .p12{transition-delay:1.93s}
+.inner{opacity:0;transform:scale(.65);transform-box:fill-box;transform-origin:center}
+#flower.show .inner{opacity:1;transform:scale(1);transition:opacity .55s ease 2.15s,transform .7s cubic-bezier(.2,1.3,.4,1) 2.15s}
+.spark{opacity:0}
+#flower.show .spark{opacity:.8;transition:opacity .6s ease 2.4s}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main>
+<button id="open" type="button">ABRIR</button>
+<div id="flower" aria-hidden="true">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="stemColor" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#397b43"/><stop offset="1" stop-color="#8cac51"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#ee941d"/><stop offset=".55" stop-color="#ffd447"/><stop offset="1" stop-color="#fff0a0"/></linearGradient>
+ <radialGradient id="seed"><stop stop-color="#9b5b2b"/><stop offset=".78" stop-color="#67371e"/><stop offset="1" stop-color="#482719"/></radialGradient>
+</defs>
+<path class="stem" d="M200 190 C205 245 194 302 201 366" fill="none" stroke="url(#stemColor)" stroke-width="10" stroke-linecap="round"/>
+<g class="leaf">
+ <path d="M199 286 C157 246 112 260 126 291 C141 319 177 313 199 286Z" fill="#5f984e"/>
+ <path d="M197 286 Q157 273 130 289" fill="none" stroke="#b4cf7b" stroke-width="2.5" stroke-linecap="round"/>
+ <path d="M202 322 C232 279 275 280 274 310 C273 339 232 347 202 322Z" fill="#78a94f"/>
+ <path d="M205 322 Q240 304 269 309" fill="none" stroke="#c2d783" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+<!-- Doce pétalos exteriores: rotación fija, aparición escalonada -->
+<g fill="url(#gold)" stroke="#e9a52d" stroke-width="1.2">
+ <ellipse class="petal p1" cx="200" cy="104" rx="18" ry="65"/>
+ <ellipse class="petal p2" cx="200" cy="104" rx="18" ry="65" transform="rotate(30 200 174)"/>
+ <ellipse class="petal p3" cx="200" cy="104" rx="18" ry="65" transform="rotate(60 200 174)"/>
+ <ellipse class="petal p4" cx="200" cy="104" rx="18" ry="65" transform="rotate(90 200 174)"/>
+ <ellipse class="petal p5" cx="200" cy="104" rx="18" ry="65" transform="rotate(120 200 174)"/>
+ <ellipse class="petal p6" cx="200" cy="104" rx="18" ry="65" transform="rotate(150 200 174)"/>
+ <ellipse class="petal p7" cx="200" cy="104" rx="18" ry="65" transform="rotate(180 200 174)"/>
+ <ellipse class="petal p8" cx="200" cy="104" rx="18" ry="65" transform="rotate(210 200 174)"/>
+ <ellipse class="petal p9" cx="200" cy="104" rx="18" ry="65" transform="rotate(240 200 174)"/>
+ <ellipse class="petal p10" cx="200" cy="104" rx="18" ry="65" transform="rotate(270 200 174)"/>
+ <ellipse class="petal p11" cx="200" cy="104" rx="18" ry="65" transform="rotate(300 200 174)"/>
+ <ellipse class="petal p12" cx="200" cy="104" rx="18" ry="65" transform="rotate(330 200 174)"/>
+</g>
+<!-- Segunda corona -->
+<g fill="#ffe98b">
+ <ellipse class="petal p3" cx="200" cy="119" rx="11" ry="45"/>
+ <ellipse class="petal p4" cx="200" cy="119" rx="11" ry="45" transform="rotate(45 200 174)"/>
+ <ellipse class="petal p5" cx="200" cy="119" rx="11" ry="45" transform="rotate(90 200 174)"/>
+ <ellipse class="petal p6" cx="200" cy="119" rx="11" ry="45" transform="rotate(135 200 174)"/>
+ <ellipse class="petal p7" cx="200" cy="119" rx="11" ry="45" transform="rotate(180 200 174)"/>
+ <ellipse class="petal p8" cx="200" cy="119" rx="11" ry="45" transform="rotate(225 200 174)"/>
+ <ellipse class="petal p9" cx="200" cy="119" rx="11" ry="45" transform="rotate(270 200 174)"/>
+ <ellipse class="petal p10" cx="200" cy="119" rx="11" ry="45" transform="rotate(315 200 174)"/>
+</g>
+<g class="inner">
+ <circle cx="200" cy="174" r="49" fill="url(#seed)"/>
+ <g fill="#dca052">
+  <circle cx="178" cy="157" r="2.4"/><circle cx="194" cy="148" r="2"/><circle cx="214" cy="154" r="2.3"/>
+  <circle cx="225" cy="172" r="2"/><circle cx="211" cy="190" r="2.4"/><circle cx="190" cy="197" r="2"/>
+  <circle cx="174" cy="181" r="2.1"/><circle cx="199" cy="174" r="2.2"/><circle cx="207" cy="166" r="1.8"/>
+  <circle cx="188" cy="171" r="1.7"/><circle cx="218" cy="183" r="1.7"/><circle cx="183" cy="188" r="1.8"/>
+ </g>
+</g>
+<g fill="#e8b74c">
+ <path class="spark" d="M86 122l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+ <path class="spark" d="M302 103l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+ <circle class="spark" cx="304" cy="231" r="4"/><circle class="spark" cx="100" cy="245" r="3"/>
+</g>
+</svg>
+</div>
+<p id="message">Te dedico esta canción y te deseo feliz cumpleaños 🫶🏻</p>
+<div id="dedication"><span>De: Jose</span><br><span>Para: la niña más linda del mundo. ❤️</span></div>
+<audio id="music" preload="auto" playsinline><source src="musica.mp3" type="audio/mpeg"></audio>
+</main>
+<script>
+const button=document.getElementById('open');
+const flower=document.getElementById('flower');
+const message=document.getElementById('message');
+const music=document.getElementById('music');
+const dedication=document.getElementById('dedication');
+button.addEventListener('click',()=>{
+ button.classList.add('hide');
+ flower.classList.add('show');
+ message.classList.add('show');
+ dedication.classList.add('show');
+ music.currentTime=0;
+ const playback=music.play();
+ if(playback && typeof playback.catch==='function'){
+   playback.catch(()=>{
+     const fallback=document.createElement('button');
+     fallback.type='button';
+     fallback.textContent='Tocar música';
+     fallback.style.cssText='position:absolute;bottom:22px;left:50%;transform:translateX(-50%);border:1px solid #d9c8a8;background:#fffdf8;color:#80633a;border-radius:999px;padding:10px 18px;font:13px Arial,sans-serif;';
+     fallback.addEventListener('click',()=>{music.play();fallback.remove();},{once:true});
+     document.querySelector('main').appendChild(fallback);
+   });
+ }
+ button.disabled=true;
+},{once:true});
+</script>
+</body>
+</html>
